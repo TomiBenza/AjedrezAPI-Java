@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajedrez</title>
+    <link rel="shortcut icon" href="./images/favicon-chess.ico" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link rel="stylesheet" href="./rankings/rankings.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">TPI-LAB-III</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rankings.html">Rankings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ayuda.html">Ayuda</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="informacion.html">Información</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav> 
+    <div class="container-fluid bg-primary py-3">
+        <h1 class="text-white text-center">Lista de jugadores registrados</h1>
+    </div>
+    <!-- Mensajes -->
+    <div id="mensajes" class="alert alert-success text-center p-2 mt-1 mb-1" style="font-size: 20px;display:none;"></div>
+    <div class="container">
+        <div class="row align-items-start">
+            <!-- Tabla -->
+            <div class="col-12 col-md-7 ">
+                <div class="container mt-5 p-2 rounded-1 bg-dark">
+                    <div class="d-grid gap-4 ">
+                        <table id="tablaJugadores" class="table table-dark table-striped">
+                            <thead>
+                              <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Puntos</th>
+                                <th scope="col">Ganadas</th>
+                                <th scope="col">Perdidas</th>
+                                <th scope="col">Acciones</th>
+                              </tr>
+                            </thead>
+                            <tbody id="tbodyJugadores"></tbody>
+                          </table>
+                        
+                        <!--
+                        <table class="table table-dark table-striped text-center">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Puntos</th>
+                                    <th scope="col">Ganadas</th>
+                                    <th scope="col">Perdidas</th>
+                                    <th scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbodyJugadores">
+                            </tbody>
+                        </table>-->
+                    </div>
+                </div>
+            </div>
+            <!-- Opciones Agregar/seleccionar -->
+            <div class="col-12 col-md-5">     
+                <div class="container p-5 ">
+                    <div class="row align-items-start">
+                        <div class="col-12 mb-5"> 
+                            <div class="bg-white p-3 rounded-1">
+                                <h3 class="text-center">Crear un jugador nuevo</h3>
+                                <div class="mb-3 mt-3"> 
+                                    <input type="text" class="form-control" id="inputNombre" placeholder="Nombre del jugador">
+                                </div>
+                                <div class="d-grid gap-2 col-6 mx-auto">
+                                <button type="btn" id="agregarJugador" class="btn btn-success">Crear Jugador</button>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="bg-white p-3 rounded-1">
+                                <h3 class="text-center">Jugar una nueva partida</h3>
+                                <h6 class="text-center">Agrega jugadores mediante la tabla</h6>
+                                <div class="mb-3">
+                                    <label for="inputJ1" class="form-label">Jugador 1 (BLANCAS)</label>
+                                    <input type="text" class="form-control" id="inputJ1" disabled>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inputJ2" class="form-label">Jugador 2 (NEGRAS)</label>
+                                    <input type="text" class="form-control" id="inputJ2" disabled>
+                                </div>
+                                <div class="d-grid gap-2 col-6 mx-auto">
+                                    <button type="btn" id="crearJuego" class="btn btn-success">Jugar</button>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Empezar juego -->
+        <div class="container">
+
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"></script>
+        <!-- Jquery -->
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+            <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+        <!--SweetAlert-->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        
+        <script src="./jugadores/listarJugadores.js"></script>
+        <script src="./juego/js/crearJuego.js"></script>
+
+</body>
+
+</html>

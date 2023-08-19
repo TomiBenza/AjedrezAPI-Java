@@ -1,0 +1,17 @@
+#tablaJugadores_wrapper .dataTables_length,
+#tablaJugadores_wrapper .dataTables_info {
+  color: #ffffff !important; /* Cambia el color de texto de los elementos de paginación y la información de la tabla */
+}
+#tablaJugadores_wrapper .dataTables_filter label {
+  color: #ffffff !important; /* Cambia el color del texto del campo de búsqueda */
+
+}
+#tablaJugadores_wrapper .dataTables_filter input[type="search"] {
+  background-color: #ffffff !important; /* Cambia el color de fondo del campo de búsqueda */
+  color: #000000 !important; /* Cambia el color del texto del campo de búsqueda */
+  
+}
+#tablaJugadores_wrapper .dataTables_filter{
+  margin-bottom: 10px;
+
+}

@@ -1,0 +1,17 @@
+CREATE DATABASE ajedrez
+USE ajedrez
+
+CREATE TABLE jugadores (
+    id_jugador SERIAL PRIMARY KEY,
+    nombre VARCHAR(50),
+    puntos INT,
+    partidas_ganadas INT,
+    partidas_perdidas INT,
+    color VARCHAR(50)
+);
+
+INSERT INTO jugadores (nombre,puntos,partidas_ganadas,partidas_perdidas,color)
+values ('Julian',9,3,0,'BLANCAS')
+
+INSERT INTO jugadores (nombre,puntos,partidas_ganadas,partidas_perdidas,color)
+values ('Tomas',0,0,3,'NEGRAS')

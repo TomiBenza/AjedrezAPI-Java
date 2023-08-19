@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajedrez</title>
+    <link rel="shortcut icon" href="./images/favicon-chess.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">TPI-LAB-III</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link "  href="rankings.html">Rankings</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="ayuda.html">Ayuda</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="informacion.html">Información</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid bg-primary py-3">
+        <h1 class="text-white text-center">Ajedrez</h1>
+    </div>
+    <div id="mensajeExito" class="alert alert-success text-center p-2 mt-1 mb-1 mensaje-exito oculto"
+        style="font-size: 20px;" ></div>
+
+    <div id="mensajeEstado" class="alert alert-danger text-center p-2 mt-1 mb-1 mensaje-estado"
+        style="font-size: 20px;" role="alert"></div>
+
+    <div class="container text-center mt-5 bg-dark text-white p-3">
+        <div class="row align-items-start">
+            <!--JS GetTablero-->
+            <div class="col-12 col-xl-4">
+
+                <div class="bg-white text-black rounded-4 pt-4 pb-4 fondo-ajedrez">
+
+                    <h2 class="ajedrez " id="showTablero">
+
+                    </h2>
+                </div>
+            </div>
+            <!-- Sector movimiento-->
+            <div class="col-12 col-xl-5 text-start">
+                <h3 class="turno mb-3" id="jugadorTurno">
+                    </h4>
+
+                    <h4 class="text-center">Realizar movimiento</h4>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <label for="inputPieza" class="form-label">Pieza</label>
+                            <input type="text" class="form-control" placeholder="Peon" id="inputPieza">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-6">
+                            <label for="inputPosInicial" class="form-label">Posicion inicial</label>
+                            <input type="text" class="form-control" placeholder="'A1'" id="inputPosInicial">
+                        </div>
+                        <div class="col-6">
+                            <label for="inputMoverA" class="form-label">Mover a</label>
+                            <input type="text" class="form-control" placeholder="'A3'" id="inputMoverA">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4 ">
+                        <div class="col-12 d-grid gap-2 col-6 mx-auto">
+                            <button class="btn btn-outline-primary" id="btnMover">Realizar movimiento</button>
+                            <button class="btn btn-outline-primary" id="btnSalir">Salir</button>
+                            <button class="btn btn-outline-primary mt-4" id="btnSalirJuegoCurso">Salir</button>
+                        </div>
+                    </div>
+
+
+            </div>
+            <!--Historial Movimientos-->
+            <div class="col-12 col-xl-3">
+                <h2>Historial</h2>
+
+                <ul class="list-group list-group-flush text-start" style="list-style-type: none;" data-bs-theme="dark"
+                    id="historialMovimientosContainer">
+                </ul>
+
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <!--Sweet Alert-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./juego/js/gestorTablero.js"></script>
+
+
+</body>
+
+</html>

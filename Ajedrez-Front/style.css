@@ -1,0 +1,52 @@
+body { 
+  background: url(images/chess-bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.ajedrez{
+  font-family: 'Times New Roman', Times, serif;
+}
+.turno{
+  border-bottom: 2px solid rgb(48, 116, 251);
+}
+
+.mensaje-exito {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  background-color: green;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  width: 80%;
+}
+
+.mensaje-exito.oculto {
+  opacity: 0;
+}
+
+.mensaje-estado {
+  width: 80%;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  background-color: rgb(178, 0, 0);
+  color: white;
+  opacity: 1;
+}
+
+
+.fondo-ajedrez{
+  background-color: rgb(50, 218, 50);
+}
+#historialMovimientosContainer {
+  overflow-y: scroll;
+  direction:ltr;
+  height: 350px; /* Ajusta la altura según tus necesidades */
+}
